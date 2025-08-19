@@ -1,0 +1,8 @@
+#!/private/var/folders/11/d3lw5q_n1zscf6hg_q3yygh40000gr/T/vibe-kanban/worktrees/vk-202a-set-up-pyt/agent_server/venv/bin/python3.12
+# -*- coding: utf-8 -*-
+import re
+import sys
+from fastapi.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
