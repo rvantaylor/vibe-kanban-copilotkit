@@ -20,6 +20,9 @@ import { Loader } from '@/components/ui/loader';
 import { GitHubLoginDialog } from '@/components/GitHubLoginDialog';
 import { AppWithStyleOverride } from '@/utils/style-override';
 import { WebviewContextMenu } from '@/vscode/ContextMenu';
+import { CopilotKit } from '@copilotkit/react-core';
+import { CopilotPopup } from '@copilotkit/react-ui';
+import '@copilotkit/react-ui/styles.css';
 
 const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);
 
@@ -189,6 +192,13 @@ function AppContent() {
               <Route path="/mcp-servers" element={<McpServers />} />
             </SentryRoutes>
           </div>
+          <CopilotPopup
+            labels={{
+              title: "Vibe Kanban Assistant",
+              initial: "Hi! 👋 How can I help you with your project tasks today?",
+            }}
+            instructions="You are an AI assistant for Vibe Kanban, a project management tool. Help users with task management, project organization, and workflow optimization. You can assist with creating tasks, understanding project structures, and providing guidance on best practices."
+          />
         </div>
       </AppWithStyleOverride>
     </ThemeProvider>
@@ -197,11 +207,13 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ConfigProvider>
-        <AppContent />
-      </ConfigProvider>
-    </BrowserRouter>
+    <CopilotKit runtimeUrl="/api/copilot">
+      <BrowserRouter>
+        <ConfigProvider>
+          <AppContent />
+        </ConfigProvider>
+      </BrowserRouter>
+    </CopilotKit>
   );
 }
 
