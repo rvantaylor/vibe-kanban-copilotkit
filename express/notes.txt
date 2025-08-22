@@ -1,0 +1,9 @@
+ 1. First install dependencies:
+  cd vibe-kanban-copilotkit/express
+  npm init -y
+  npm install express @copilotkit/runtime
+  npm install -D typescript @types/express @types/node
+  ts-node
+
+  2. Then run the server:
+  npx ts-node server.ts

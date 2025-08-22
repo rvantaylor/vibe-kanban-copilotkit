@@ -207,7 +207,11 @@ function AppContent() {
 
 function App() {
   return (
-    <CopilotKit runtimeUrl="/api/copilot">
+    <CopilotKit 
+      agent="agent"
+      runtimeUrl="http://localhost:4000/api/copilotkit"
+      showDevConsole={false}
+    >
       <BrowserRouter>
         <ConfigProvider>
           <AppContent />

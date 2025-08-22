@@ -1,0 +1,21 @@
+prerequisite
+pnpm install
+
+Run frontend 
+npm run dev:frontend
+
+Run Agent server
+cd agent_server
+poetry install
+poetry run python server.py
+
+
+Testing FastAPI Backend Server
+curl -X GET http://0.0.0.0:8000/copilotkit/ \
+    -H "Content-Type: application/json" \
+    
+{"actions":[],"agents":[{"name":"vibe_kanban","description":"An example agent to use as a starting point for your own agent.","type":"langgraph"}],"sdkVersion":"0.1.60"}
+
+
+installed rust with brew
+brew install rust
