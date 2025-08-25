@@ -16,6 +16,9 @@
 
 ![](frontend/public/vibe-kanban-screenshot-overview.png)
 
+### Step 1
+Initial Copilot Kit setup with weather agent. 
+
 ## Overview
 
 AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:
